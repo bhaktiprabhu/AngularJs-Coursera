@@ -39,16 +39,25 @@
             },
             {
               name: "Donuts",
-              quantity: "200"
+              quantity: "20"
             },
             {
               name: "Cookies",
-              quantity: "300"
+              quantity: "30"
             },
             {
               name: "Chocolates",
               quantity: "5"
+            },
+            {
+              name: "Strawberries",
+              quantity: "10"
+            },
+            {
+              name: "Chips Packets",
+              quantity: "4"
             }
+
           ];
           var Bought = [];
       
