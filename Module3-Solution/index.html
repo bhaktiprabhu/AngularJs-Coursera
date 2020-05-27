@@ -5,21 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles/bootstrap.min.css">
     <link rel="stylesheet" href="styles/styles.css">
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <style>
+        .emptyMessage {
+          font-weight: bold;
+          color: red;
+          font-size: 1.2em;
+        }
+        li {
+          margin-bottom: 7px;
+          font-size: 1.2em;
+        }
+        li > button {
+          margin-left: 6px;
+        }
+      </style>
   </head>
-<body>
+<body ng-app="NarrowItDownApp" ng-controller="NarrowItDownController as narrowlist">
    <div class="container">
-    <h1>Narrow Down Your Chinese Menu Choice</h1>
-
-    <div class="form-group">
-      <input type="text" placeholder="search term" class="form-control">
+        <h1>Narrow Down Your Chinese Menu Choice</h1>
+        <div class="row">
+            <div class="form-group">
+                <input type="text" ng-model="narrowlist.searchTerm" placeholder="search term" class="form-control">
+            </div>
+            <div class="form-group narrow-button">
+                <button class="btn btn-primary" ng-click="narrowlist.getMenuItems(narrowlist.searchTerm)">Narrow It Down For Me!</button>
+            </div>
+        </div>
+        <div class="row">
+            <!-- found-items should be implemented as a component -->
+                <found-items found="narrowlist.found" on-remove="narrowlist.removeItem(index)" empty="narrowlist.empty"></found-items>
+        </div>
     </div>
-    <div class="form-group narrow-button">
-      <button class="btn btn-primary">Narrow It Down For Me!</button>
-    </div>
-
-    <!-- found-items should be implemented as a component -->
-    <found-items found-items="...." on-remove="...."></found-items>
-  </div>
+  
 
 </body>
 </html>
