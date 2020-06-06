@@ -1,0 +1,9 @@
+<div class="tabs"><a ui-sref="home">Home</a> &lt;
+<a ui-sref="categoriesList">Category List</a> &lt; <span>Items</span></div>
+<h2>Items in Selected Category</h2>
+<ul>
+    <li ng-repeat="item in itemDetail.catItems">
+         <b>Name:</b> {{item.name}} ({{item.short_name}}) <br>
+         <b>Description:</b> {{item.description}}
+    </li>
+</ul>

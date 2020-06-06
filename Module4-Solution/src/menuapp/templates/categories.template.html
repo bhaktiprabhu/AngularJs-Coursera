@@ -1,0 +1,10 @@
+<div class="tabs"><a ui-sref="home">Home</a> &lt; <span>Category List</span></div>
+<h2>Menu Categories</h2>
+<!-- <categories-list items="categoriesList.items"></categories-list> -->
+
+<ul class="category_list">
+    <li ng-repeat="item in categoriesList.items"
+        ui-sref="itemDetail({itemId: $index})" class="items">
+        <a href="" class="items">  {{item.name}} ({{item.short_name}}) </a>
+    </li>
+</ul>
