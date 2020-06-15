@@ -1,0 +1,30 @@
+<div class="container">
+    <h2 id="menu-categories-title" class="text-center">Registered Account</h2>
+    <div ng-if = "!myInfoCtrl.signUpStatus">
+        Not Signed Up Yet.
+        <a ui-sref="public.signup"> Sign Up Now!</a>
+    </div>
+    <div id="userinfo" ng-if="myInfoCtrl.signUpStatus">
+        Name: {{ myInfoCtrl.userinfo.firstname}} {{ myInfoCtrl.userinfo.lastname}} <br>
+        Email: {{ myInfoCtrl.userinfo.email }} <br>
+        Phone: {{ myInfoCtrl.userinfo.phone }}
+    </div>   
+
+    <div class="menu-item-tile col-md-6" ng-if = "myInfoCtrl.signUpStatus">
+        Favorite Menu Item: <br><br>
+        <div class="row">
+        <div class="col-sm-5">
+            <div class="menu-item-photo">
+            <div>{{myInfoCtrl.favItem.short_name}}</div>
+            <img class="img-responsive" width="250" height="150" ng-src="{{myInfoCtrl.basePath}}/images/{{myInfoCtrl.favItem.short_name}}.jpg" alt="{{myInfoCtrl.favItem.name}}">
+            </div>
+        </div>
+        <div class="menu-item-description col-sm-7">
+            <h3 class="menu-item-title">{{myInfoCtrl.favItem.name}}</h3>
+            <p class="menu-item-details">{{myInfoCtrl.favItem.description}}</p>
+        </div>
+        </div>
+    <hr class="visible-xs">
+  </div>
+
+</div>
